@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	log.Println("init interface set")
-	s := set.NewInterface()
+	log.Println("init string set")
+	s := set.NewString()
 	log.Printf("set: %v\n", s)
 
 	log.Println("###### basic operations ######")
@@ -37,15 +37,15 @@ func main() {
 	log.Printf("set copy: %v\n", s.Copy())
 	log.Printf("set string: %s", s.String())
 	log.Printf("set list: %v", s.List())
-	s.SortedList(func(i, j interface{}) bool {
+	s.SortedList(func(i, j string) bool {
 		return false
 	})
 
 	log.Println("###### iterator operations ######")
-	s.Each(func(i interface{}) {
+	s.Each(func(i string) {
 		log.Println(i)
 	})
-	s.EachE(func(i interface{}) error {
+	s.EachE(func(i string) error {
 		return set.ErrBreakEach
 	})
 
@@ -55,7 +55,7 @@ func main() {
 	log.Printf("set has e1: %v\n", s.Has("e1"))
 	log.Printf("set has any e1 and e2: %v\n", s.HasAny("e1"))
 	log.Printf("set has all e1 and e2: %v\n", s.HasAll("e1"))
-	t := set.NewInterface("t1", "t2")
+	t := set.NewString("t1", "t2")
 	log.Printf("t set: %v\n", t)
 	s.IsSuperset(t)
 	s.IsSubset(t)

@@ -8,21 +8,21 @@ import (
 )
 
 func main() {
-	log.Println("init interface set")
-	s := set.NewInterface()
+	log.Println("init int set")
+	s := set.NewInt()
 	log.Printf("set: %v\n", s)
 
 	log.Println("###### basic operations ######")
 	log.Println("set add test, test1, test2, pop1, case1, case2 and case3")
-	s.Add("test")
-	s.Add("test1", "test2")
-	s.Add("pop1")
-	s.Add("case1", "case2", "case3")
+	s.Add(0)
+	s.Add(1, 2)
+	s.Add(11)
+	s.Add(21, 22, 23)
 	log.Printf("set: %v\n", s)
 
 	log.Println("set removes test, test1 and test2")
-	s.Remove("test")
-	s.Remove("test1", "test2")
+	s.Remove(0)
+	s.Remove(1, 2)
 	log.Printf("set: %v\n", s)
 	k, ok := s.Pop()
 	if ok {
@@ -33,29 +33,29 @@ func main() {
 	s.Clear()
 	log.Printf("set size: %d\n", s.Size())
 	log.Println("set add copy1 and copy2")
-	s.Add("copy1", "copy2")
+	s.Add(41, 42)
 	log.Printf("set copy: %v\n", s.Copy())
 	log.Printf("set string: %s", s.String())
 	log.Printf("set list: %v", s.List())
-	s.SortedList(func(i, j interface{}) bool {
-		return false
+	s.SortedList(func(i, j int) bool {
+		return i < j
 	})
 
 	log.Println("###### iterator operations ######")
-	s.Each(func(i interface{}) {
+	s.Each(func(i int) {
 		log.Println(i)
 	})
-	s.EachE(func(i interface{}) error {
+	s.EachE(func(i int) error {
 		return set.ErrBreakEach
 	})
 
 	log.Println("###### check operations ######")
 	log.Printf("set: %s\n", s)
 	log.Printf("set is empty: %v\n", s.IsEmpty())
-	log.Printf("set has e1: %v\n", s.Has("e1"))
-	log.Printf("set has any e1 and e2: %v\n", s.HasAny("e1"))
-	log.Printf("set has all e1 and e2: %v\n", s.HasAll("e1"))
-	t := set.NewInterface("t1", "t2")
+	log.Printf("set has e1: %v\n", s.Has(51))
+	log.Printf("set has any e1 and e2: %v\n", s.HasAny(51))
+	log.Printf("set has all e1 and e2: %v\n", s.HasAll(51))
+	t := set.NewInt(61, 62)
 	log.Printf("t set: %v\n", t)
 	s.IsSuperset(t)
 	s.IsSubset(t)

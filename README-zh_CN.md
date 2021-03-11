@@ -63,7 +63,7 @@ t := s.List()
 
 // returns the all elements as a slice sorted by less func
 s.SortedList(func(i, j interface{}) bool {
-		return false
+    return false
 })
 
 // returns string
@@ -72,12 +72,12 @@ str := s.String()
 #### Iterator Operations
 ```go
 s.Each(func(i interface{}) {
-	log.Println(i)
+    log.Println(i)
 })
 
 s.EachE(func(i interface{}) error {
     log.Println(i)
-	return set.ErrBreakEach
+    return set.ErrBreakEach
 })
 ```
 #### Check Operations
