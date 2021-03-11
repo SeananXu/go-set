@@ -119,6 +119,23 @@ s.SymmetricDifference(t)
 ```
 更多点击[这里](./README-zh_CN.md)
 
+## Setgen
+`Setgen` 根据指定的文件自动生成对应 `Set` 文件的命令行工具
+- `-s`: set type, default: ${tp}s
+- `-p`: element package, default: don't import package
+- `-t`: element type
+- `-o`: Output file; defaults to current ${st}.go
+- `-l`: set need ErrBreakEach error, light predicates whether generate code imports github.com/SeananXu/go-set
+
+安装
+```
+go get github.com/SeananXu/go-set/setgen
+```
+例如:
+```
+setgen -t Example
+```
+
 ## License
 
 The MIT License (MIT) - see [LICENSE](./LISENCE) for more details

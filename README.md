@@ -119,6 +119,23 @@ s.SymmetricDifference(t)
 ```
 more case click [here](./examples/README.md)
 
+## Setgen
+The `Setgen` command is used to generate source code for a set class given a type.
+It supports the following flags
+- `-s`: set type, default: ${tp}s
+- `-p`: element package, default: don't import package
+- `-t`: element type
+- `-o`: Output file; defaults to current ${st}.go
+- `-l`: set need ErrBreakEach error, light predicates whether generate code imports github.com/SeananXu/go-set
+
+Install
+```
+go get github.com/SeananXu/go-set/setgen
+```
+For example:
+```
+setgen -t Example
+```
 ## License
 
 The MIT License (MIT) - see [LICENSE](./LISENCE) for more details
