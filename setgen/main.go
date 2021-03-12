@@ -61,17 +61,21 @@ func main() {
 	var writer io.Writer
 	switch *output {
 	case "":
-		writer, err = os.OpenFile(strings.ToLower(*st)+".go", os.O_WRONLY|os.O_CREATE, 0666)
+		f, err := os.OpenFile(strings.ToLower(*st)+".go", os.O_RDWR|os.O_TRUNC|os.O_CREATE, 0644)
 		if err != nil {
 			log.Fatalf("create writer steam error: %v", err)
 		}
+		defer f.Close()
+		writer = f
 	case "-":
 		writer = os.Stdout
 	default:
-		writer, err = os.OpenFile(*output, os.O_WRONLY|os.O_CREATE, 0666)
+		f, err := os.OpenFile(*output, os.O_RDWR|os.O_TRUNC|os.O_CREATE, 0644)
 		if err != nil {
 			log.Fatalf("create writer steam error: %v", err)
 		}
+		defer f.Close()
+		writer = f
 	}
 	if err = t.Execute(writer, map[string]interface{}{
 		"st":    st,
