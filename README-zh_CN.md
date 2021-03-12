@@ -1,6 +1,6 @@
 [English](./README.md) | 简体中文
 
-## Set
+## Set [![GoDoc](https://pkg.go.dev/badge/github.com/SeananXu/go-set?utm_source=godoc)](https://godoc.org/github.com/SeananXu/go-set) [![Go Report Card](https://goreportcard.com/badge/github.com/SeananXu/go-set)](https://goreportcard.com/report/github.com/SeananXu/go-set) 
 Set 是用 go 语言实现存储**唯一**和**无序**元素的数据结构.
 
 除了 [Set (abstract data type)](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) 文档定义功能之外, 它还
@@ -121,11 +121,12 @@ s.SymmetricDifference(t)
 
 ## Setgen
 `Setgen` 根据指定的文件自动生成对应 `Set` 文件的命令行工具
-- `-s`: set type, default: ${tp}s
-- `-p`: element package, default: don't import package
-- `-t`: element type
-- `-o`: Output file; defaults to current ${st}.go
-- `-l`: set need ErrBreakEach error, light predicates whether generate code imports github.com/SeananXu/go-set
+- `-s`: Set name, default: element type add 's'.
+- `-i`: Import element package, default: don't import package.
+- `-p`: Generated go file package, default: directory name.
+- `-t`: Set storage element type, this options must be set.
+- `-o`: Output file name, default: set name add '.go'.
+- `-l`: Whether go file imports 'ErrBreakEach' of 'github.com/SeananXu/go-set', default: import.
 
 安装
 ```
@@ -138,4 +139,4 @@ setgen -t Example
 
 ## License
 
-The MIT License (MIT) - see [LICENSE](./LISENCE) for more details
+The MIT License (MIT) - see [LICENSE](LICENSE) for more details

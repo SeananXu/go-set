@@ -26,7 +26,7 @@ func main() {
 	log.Printf("set: %v\n", s)
 	k, ok := s.Pop()
 	if ok {
-		log.Printf("set pop: %s\n", k)
+		log.Printf("set pop: %d\n", k)
 		log.Printf("set: %v\n", s)
 	}
 	log.Println("set clear")

@@ -28,16 +28,16 @@ SOFTWARE.
 // Package set implements a set backed by a hash map.
 //
 // Reference: https://en.wikipedia.org/wiki/Set_%28abstract_data_type%29
-package set
+package {{.pkg}}
 
 import (
 	"fmt"
 	"sort"
 	"strings"
-{{if .pkg}}{{if .light}}
-	"{{.pkg}}"
+{{if .ipt}}{{if .light}}
+	"{{.ipt}}"
 ){{else}}
-	"{{.pkg}}"
+	"{{.ipt}}"
 
 	"github.com/SeananXu/go-set"
 ){{end}}{{else}}{{if .light}}){{else}}

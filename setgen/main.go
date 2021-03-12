@@ -5,16 +5,18 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 	"text/template"
 )
 
 var (
-	st     = flag.String("s", "", "set type, default: ${tp}s")
-	pkg    = flag.String("p", "", "element package, default: don't import package")
-	tp     = flag.String("t", "", "element type")
-	output = flag.String("o", "", "Output file; defaults to current ${st}.go")
-	light  = flag.Bool("l", false, "set need ErrBreakEach error, light predicates whether generate code imports github.com/SeananXu/go-set")
+	st     = flag.String("s", "", "Set name, default: element type add 's'.")
+	ipt    = flag.String("i", "", "Import element package, default: don't import package.")
+	pkg    = flag.String("p", "", "Generated go file package, default: directory name.")
+	tp     = flag.String("t", "", "Set storage element type, this options must be set.")
+	output = flag.String("o", "", "Output file name, default: set name add '.go'.")
+	light  = flag.Bool("l", false, "Whether go file imports 'ErrBreakEach' of 'github.com/SeananXu/go-set', default: import.")
 )
 
 func main() {
@@ -33,11 +35,11 @@ func main() {
 		*st = structName + "s"
 	}
 	pkgWithStruct := structName
-	if *pkg != "" {
-		if i := strings.LastIndex(*pkg, "/"); i != -1 {
-			pkgWithStruct = (*pkg)[i+1:] + "." + structName
+	if *ipt != "" {
+		if i := strings.LastIndex(*ipt, "/"); i != -1 {
+			pkgWithStruct = (*ipt)[i+1:] + "." + structName
 		} else {
-			pkgWithStruct = *pkg + "." + structName
+			pkgWithStruct = *ipt + "." + structName
 		}
 	}
 	var obj string
@@ -47,6 +49,10 @@ func main() {
 	} else {
 		*tp = pkgWithStruct
 		obj = pkgWithStruct + "{}"
+	}
+	if *pkg == "" {
+		pwd, _ := os.Getwd()
+		*pkg = filepath.Base(pwd)
 	}
 	t, err := template.New("setgen").Parse(tmp)
 	if err != nil {
@@ -72,6 +78,7 @@ func main() {
 		"tp":    tp,
 		"obj":   obj,
 		"light": *light,
+		"ipt":   *ipt,
 		"pkg":   *pkg,
 	}); err != nil {
 		log.Fatalf("excute output file error: %v", err)

@@ -1,6 +1,6 @@
 English | [简体中文](./README-zh_CN.md)
 
-## Set
+## Set [![GoDoc](https://pkg.go.dev/badge/github.com/SeananXu/go-set?utm_source=godoc)](https://godoc.org/github.com/SeananXu/go-set) [![Go Report Card](https://goreportcard.com/badge/github.com/SeananXu/go-set)](https://goreportcard.com/report/github.com/SeananXu/go-set)
 Set is an abstract data type that can store unique values, without any particular order implementation in Go.
 
 Except for reference document [Set (abstract data type)](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) to define functions
@@ -121,12 +121,13 @@ more case click [here](./examples/README.md)
 
 ## Setgen
 The `Setgen` command is used to generate source code for a set class given a type.
-It supports the following flags
-- `-s`: set type, default: ${tp}s
-- `-p`: element package, default: don't import package
-- `-t`: element type
-- `-o`: Output file; defaults to current ${st}.go
-- `-l`: set need ErrBreakEach error, light predicates whether generate code imports github.com/SeananXu/go-set
+It supports the following flags.
+- `-s`: Set name, default: element type add 's'.
+- `-i`: Import element package, default: don't import package.
+- `-p`: Generated go file package, default: directory name.
+- `-t`: Set storage element type, this options must be set.
+- `-o`: Output file name, default: set name add '.go'.
+- `-l`: Whether go file imports 'ErrBreakEach' of 'github.com/SeananXu/go-set', default: import.
 
 Install
 ```
@@ -138,4 +139,4 @@ setgen -t Example
 ```
 ## License
 
-The MIT License (MIT) - see [LICENSE](./LISENCE) for more details
+The MIT License (MIT) - see [LICENSE](LICENSE) for more details
