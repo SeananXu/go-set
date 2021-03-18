@@ -127,6 +127,7 @@ s.SymmetricDifference(t)
 - `-t`: Set storage element type, this options must be set.
 - `-o`: Output file name, default: set name add '.go'.
 - `-l`: Whether go file imports 'ErrBreakEach' of 'github.com/SeananXu/go-set', default: import.
+- `-h`: help document.
 
 安装
 ```
