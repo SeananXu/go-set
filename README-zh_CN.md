@@ -117,7 +117,7 @@ s.Difference(t)
 // returns the symmetric difference of sets s and t
 s.SymmetricDifference(t)
 ```
-更多点击[这里](./README-zh_CN.md)
+更多点击[这里](./examples/README-zh_CN.md)
 
 ## Setgen
 `Setgen` 根据指定的文件自动生成对应 `Set` 文件的命令行工具
@@ -127,7 +127,7 @@ s.SymmetricDifference(t)
 - `-t`: Set storage element type, this options must be set.
 - `-o`: Output file name, default: set name add '.go'.
 - `-l`: Whether go file imports 'ErrBreakEach' of 'github.com/SeananXu/go-set', default: import.
-- `-h`: help document.
+- `-h`: Help document.
 
 安装
 ```
