@@ -44,6 +44,9 @@ float32Set := set.NewFloat32()
 // float64 set
 float64Set := set.NewFloat64()
 
+// uint set
+uintSet := set.NewUint()
+
 // string set
 stringSet := set.NewString()
 ```
