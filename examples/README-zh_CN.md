@@ -13,3 +13,4 @@
 - [Float32](./float32/main.go)
 - [Float64](./float64/main.go)
 - [Uint](./uint/main.go)
+- [Uint8](./uint8/main.go)
