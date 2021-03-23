@@ -17,3 +17,4 @@
 - [Uint16](./uint16/main.go)
 - [Uint32](./uint32/main.go)
 - [Uint64](./uint64/main.go)
+- [Uintptr](./uintptr/main.go)
