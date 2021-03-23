@@ -32,6 +32,9 @@ int8Set := set.NewInt8()
 // int16 set
 int16Set := set.NewInt16()
 
+// int32 set
+int32Set := set.NewInt32()
+
 // int64 set
 int64Set := set.NewInt64()
 
