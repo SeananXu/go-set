@@ -14,3 +14,4 @@ This package contains some examples demonstrating various use cases of [Set](../
 - [Float64](./float64/main.go)
 - [Uint](./uint/main.go)
 - [Uint8](./uint8/main.go)
+- [Uint16](./uint16/main.go)

@@ -50,6 +50,9 @@ uintSet := set.NewUint()
 // uint8 set
 uint8Set := set.NewUint8()
 
+// uint16 set
+uint16Set := set.NewUint16()
+
 // string set
 stringSet := set.NewString()
 ```
