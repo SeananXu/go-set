@@ -6,6 +6,8 @@
 - [Interface](./interface/main.go)
 - [String](./string/main.go)
 - [int](./int/main.go)
+- [int8](./int8/main.go)
+- [int16](./int16/main.go)
 - [int64](./int64/main.go)
 - [float32](./float32/main.go)
 - [float64](./float64/main.go)
