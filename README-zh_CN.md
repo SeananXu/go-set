@@ -26,6 +26,9 @@ interfaceSet := set.NewInterface()
 // int set
 intSet := set.NewInt()
 
+// int8 set
+int8Set := set.NewInt8()
+
 // int64 set
 int64Set := set.NewInt64()
 
