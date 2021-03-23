@@ -15,3 +15,4 @@
 - [Uint](./uint/main.go)
 - [Uint8](./uint8/main.go)
 - [Uint16](./uint16/main.go)
+- [Uint32](./uint32/main.go)
